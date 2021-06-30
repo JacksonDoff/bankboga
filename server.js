@@ -32,8 +32,11 @@ app.use('/css', require('postcss-middleware')({
 }))
 
 app.get('*', (req, res, next) => {
-    console.log(`Requested ${req.path}...`)
-
+	var userName = req.cookies.userAuth
+	if (!userName) userName = 'UNKNOWN'
+	if (req.path != '/favicon.ico')
+      console.log(`[${userName}] ${req.path}`)
+  
     next()
 })
 
@@ -71,6 +74,6 @@ https.createServer({
 	key: fs.readFileSync('server.key'),
 	cert: fs.readFileSync('server.crt')
 }, app).listen(port, () => {
-	console.log(`Bank Running on Port: ${port}`)
+	console.log(`[BEGIN] Bank Running on Port: ${port}`)
 })
 

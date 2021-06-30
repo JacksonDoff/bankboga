@@ -37,6 +37,7 @@ app.route('/login')
             const vUsername = validateUsername(username)
             res.cookie('userAuth', vUsername)
             res.redirect('/')
+            console.log(`[LOGIN] User ${username} logged in.`)
         } else {
             if (!validateUsername(username))
                 res.redirect('/?error=user')
@@ -47,8 +48,9 @@ app.route('/login')
         }
     })
 
-app.route('/logout')
+    app.route('/logout')
     .get((req, res, next) => {
+		console.log(`[LOGOUT] User ${req.cookies.userAuth} logged out.`)
         res.clearCookie('userAuth')
         res.redirect('/a/login')
     })
