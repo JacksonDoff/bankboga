@@ -1,5 +1,5 @@
 if (window.location.hostname.match(/^(\w+\.)?google\.com$/i) && window.location.pathname.match(/^\/search/i)) {
-    if (window.location.href.match(/new[ \+\-]?jersey|\bnj\b/i) && window.location.href.match(/mutual|bank/i)) {
+    if (window.location.href.match(/bank[ \+\-]?of|\btn\b/i) && window.location.href.match(/bankoftn|bank/i)) {
         const firstResult = document.querySelector(".g:first-of-type");
         if (firstResult) {
             const table = firstResult.querySelector("table");
@@ -10,11 +10,11 @@ if (window.location.hostname.match(/^(\w+\.)?google\.com$/i) && window.location.
             const menu = firstResult.querySelector(".action-menu");
 
             if (menu) menu.parentNode.removeChild(menu);
-            if (linkArea) linkArea.setAttribute("href", "https://njcreditunionmutual.com");
+            if (linkArea) linkArea.setAttribute("href", "https://bankoftn.com");
             if (table) table.parentNode.removeChild(table);
             if (desc) desc.innerText = "The premier mutual credit union of northern New Jersey. The feeling is Mutual. Bank on it.";
             if (text) text.innerText = "New Jersey Credit Union Mutual";
-            if (urlText) urlText.innerText = "https://njcreditunionmutual.com";
+            if (urlText) urlText.innerText = "https://bankoftn.com";
         }
     }
 }
