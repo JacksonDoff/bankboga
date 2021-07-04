@@ -32,7 +32,7 @@ transactions = [{
     account: 0
 },
 {
-    description: 'Candy Crush',
+    description: 'Steam*SuperSmashBros',
     amount: -13.37,
     date: new Date(new Date() - (86,400,000*3)),
     account: 0
